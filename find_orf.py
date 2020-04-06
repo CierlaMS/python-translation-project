@@ -59,8 +59,8 @@ def vet_nucleotide_sequence(sequence):
     # any valid RNA and DNA sequence strings, respectively (and only strings of
     # RNA and DNA bases).
     # Read the docstring above for additional clues.
-    rna_pattern_str = r'AUCG'
-    dna_pattern_str = r'ATCG'
+    rna_pattern_str = r'^[AUGCaugc]*$'
+    dna_pattern_str = r'^[ATGCatgc]*$'
     ##########################################################################
 
     rna_pattern = re.compile(rna_pattern_str)
@@ -123,7 +123,8 @@ def vet_codon(codon):
     # Read the docstring above for additional clues.
 #    codon_pattern_str = r'AUG'
 
-    codon_pattern_str = r'^[A|U|G|C]{3}$'
+    codon_pattern_str = r'^[AUGCaugc]{3}$'
+
     ##########################################################################
 
     codon_pattern = re.compile(codon_pattern_str)
@@ -214,9 +215,10 @@ def find_first_orf(sequence,
 #    orf_pattern_str = r'AUG GUA UAA'
  
     if start_codons == ['AUG']:
-        orf_pattern_str = r'AUG([A|U|C|G]{3})*(UAG|UGA|UAA)'
+        orf_pattern_str = r'AUG([AUCG]{3})*(UAG|UGA|UAA)'
     else:
-        orf_pattern_str = r'AAA([A|U|C|G]{3})*UUU'
+        orf_pattern_str = r'AAA([AUCG]{3})*UUU'
+
    ##########################################################################
 
     # Create the regular expression object
