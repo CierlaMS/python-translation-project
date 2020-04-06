@@ -1,7 +1,5 @@
 #! /usr/bin/env python3
 
-#Find open reading frame 
-
 import sys
 import re
 
