@@ -7,7 +7,7 @@ import find_orf
 import translate
 import argparse
 
-p = argparse.ArgumentParser(descritption=usage)
+p = argparse.ArgumentParser(description=usage)
 p.add_argument('Path'
         metavar='path',
         type=str
