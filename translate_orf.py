@@ -13,6 +13,7 @@ def main():
     parser = argparse.ArgumentParser(
             formatter_class = argparse.ArgumentDefaultsHelpFormatter)
 
+<<<<<<< HEAD
     # Tell the parser what command-line arguments this script can receive
     parser.add_argument('sequence',
             metavar = 'SEQUENCE',
@@ -35,6 +36,13 @@ def main():
             nargs = '+', # one or more arguments
             default = ['UAA', 'UAG', 'UGA'],
             help = ('One or more possible stop codons.'))
+=======
+p = argparse.ArgumentParser(description=usage)
+p.add_argument('Path'
+        metavar='path',
+        type=str
+        help='the path to list'
+>>>>>>> 61c7a46c812d3d652eb32691b2ef553477f8c7bc
 
     # Parse the command-line arguments into a 'dict'-like container
     args = parser.parse_args()
